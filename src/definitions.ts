@@ -8,7 +8,7 @@ export interface VhPrinterAndroidPosUsbPlugin {
   printText(options: { text: string }): Promise<void>;
   printBarcode(options: { data: string, symbology?: number, width?: number, height?: number, alignment?: number }): Promise<void>;
   printQRCode(options: { content: string, moduleSize?: number, ecLevel?: number, alignment?: number, pageWidth?: number }): Promise<void>;
-  printPicCode(options: { image: string, width?: number }): Promise<void>;
+  printPicCode(options: { image: string, width?: number, feedLines?: number }): Promise<void>;
   getPrinterStatus(): Promise<{ status: number }>;
   openCashBox(options: { pin: number }): Promise<void>;
   printTable(options: { table: any }): Promise<void>;

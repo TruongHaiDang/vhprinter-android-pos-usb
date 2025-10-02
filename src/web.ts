@@ -53,7 +53,7 @@ export class VhPrinterAndroidPosUsbWeb extends WebPlugin implements VhPrinterAnd
     throw this.unimplemented('printQRCode is not supported on web.');
   }
 
-  async printPicCode(options: { image: string, width?: number }): Promise<void> {
+  async printPicCode(options: { image: string, width?: number, feedLines?: number }): Promise<void> {
     console.log('printPicCode is not supported on web.', JSON.stringify(options));
     throw this.unimplemented('printPicCode is not supported on web.');
   }
