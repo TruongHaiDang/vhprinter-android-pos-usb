@@ -254,6 +254,7 @@ public class VhPrinterAndroidPosUsbPlugin extends Plugin {
     public void printPicCode(PluginCall call) {
         String base64Image = call.getString("image");
         int width = call.getInt("width", 512);
+        int feedLines = call.getInt("feedLines", 5);
         if (base64Image == null) {
             call.reject("Must provide an image to print");
             return;
@@ -262,7 +263,7 @@ public class VhPrinterAndroidPosUsbPlugin extends Plugin {
         try {
             byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-            printer.initializePrinter().printBitmap(decodedByte, POSConst.ALIGNMENT_CENTER, width).feedLine(5)
+            printer.initializePrinter().printBitmap(decodedByte, POSConst.ALIGNMENT_CENTER, width).feedLine(feedLines)
                     .cutHalfAndFeed(1);
             call.resolve();
         } catch (Exception e) {
