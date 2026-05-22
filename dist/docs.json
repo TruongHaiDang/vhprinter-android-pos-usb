@@ -7,7 +7,7 @@
     "methods": [
       {
         "name": "echo",
-        "signature": "(options: { value: string; }) => Promise<{ value: string; }>",
+        "signature": "(options: { value: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -15,7 +15,7 @@
             "type": "{ value: string; }"
           }
         ],
-        "returns": "Promise<{ value: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -23,7 +23,7 @@
       },
       {
         "name": "connectUSB",
-        "signature": "(options: { pathName: string; }) => Promise<void>",
+        "signature": "(options: { pathName: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -31,7 +31,7 @@
             "type": "{ pathName: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -39,7 +39,7 @@
       },
       {
         "name": "connectNet",
-        "signature": "(options: { ipAddress: string; }) => Promise<void>",
+        "signature": "(options: { ipAddress: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -47,7 +47,7 @@
             "type": "{ ipAddress: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -55,7 +55,7 @@
       },
       {
         "name": "connectBt",
-        "signature": "(options: { macAddress: string; }) => Promise<void>",
+        "signature": "(options: { macAddress: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -63,7 +63,7 @@
             "type": "{ macAddress: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -71,7 +71,7 @@
       },
       {
         "name": "connectMAC",
-        "signature": "(options: { macAddress: string; }) => Promise<void>",
+        "signature": "(options: { macAddress: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -79,7 +79,7 @@
             "type": "{ macAddress: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -87,7 +87,7 @@
       },
       {
         "name": "connectSerial",
-        "signature": "(options: { port: string; boudrate: string; }) => Promise<void>",
+        "signature": "(options: { port: string; boudrate: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -95,7 +95,7 @@
             "type": "{ port: string; boudrate: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -103,7 +103,7 @@
       },
       {
         "name": "printText",
-        "signature": "(options: { text: string; }) => Promise<void>",
+        "signature": "(options: { text: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -111,7 +111,7 @@
             "type": "{ text: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -119,7 +119,7 @@
       },
       {
         "name": "printBarcode",
-        "signature": "(options: { data: string; symbology?: number; width?: number; height?: number; alignment?: number; }) => Promise<void>",
+        "signature": "(options: { data: string; symbology?: number; width?: number; height?: number; alignment?: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -127,7 +127,7 @@
             "type": "{ data: string; symbology?: number | undefined; width?: number | undefined; height?: number | undefined; alignment?: number | undefined; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -135,7 +135,7 @@
       },
       {
         "name": "printQRCode",
-        "signature": "(options: { content: string; moduleSize?: number; ecLevel?: number; alignment?: number; pageWidth?: number; }) => Promise<void>",
+        "signature": "(options: { content: string; moduleSize?: number; ecLevel?: number; alignment?: number; pageWidth?: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -143,7 +143,7 @@
             "type": "{ content: string; moduleSize?: number | undefined; ecLevel?: number | undefined; alignment?: number | undefined; pageWidth?: number | undefined; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -151,7 +151,7 @@
       },
       {
         "name": "printPicCode",
-        "signature": "(options: { image: string; width?: number; feedLines?: number; }) => Promise<void>",
+        "signature": "(options: { image: string; width?: number; feedLines?: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -159,7 +159,7 @@
             "type": "{ image: string; width?: number | undefined; feedLines?: number | undefined; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -167,9 +167,9 @@
       },
       {
         "name": "getPrinterStatus",
-        "signature": "() => Promise<{ status: number; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ status: number; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -177,7 +177,7 @@
       },
       {
         "name": "openCashBox",
-        "signature": "(options: { pin: number; }) => Promise<void>",
+        "signature": "(options: { pin: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -185,7 +185,7 @@
             "type": "{ pin: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -193,7 +193,7 @@
       },
       {
         "name": "printTable",
-        "signature": "(options: { table: any; }) => Promise<void>",
+        "signature": "(options: { table: any; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -201,7 +201,7 @@
             "type": "{ table: any; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -209,9 +209,9 @@
       },
       {
         "name": "cpclGetPrinterStatus",
-        "signature": "() => Promise<{ status: string; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ status: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -219,9 +219,9 @@
       },
       {
         "name": "searchUsb",
-        "signature": "() => Promise<{ devices: string[]; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ devices: string[]; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -229,9 +229,9 @@
       },
       {
         "name": "exit",
-        "signature": "() => Promise<void>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -239,9 +239,9 @@
       },
       {
         "name": "getAppCtx",
-        "signature": "() => Promise<{ context: string; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ context: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -249,9 +249,9 @@
       },
       {
         "name": "getUsbDevice",
-        "signature": "() => Promise<{ devices: string[]; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ devices: string[]; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -259,9 +259,9 @@
       },
       {
         "name": "getSerialPort",
-        "signature": "() => Promise<{ ports: string[]; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ ports: string[]; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -269,9 +269,9 @@
       },
       {
         "name": "getCopyRight",
-        "signature": "() => Promise<{ copyRight: string; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ copyRight: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -279,9 +279,9 @@
       },
       {
         "name": "searchNetDevice",
-        "signature": "() => Promise<{ devices: any[]; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ devices: any[]; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -289,7 +289,7 @@
       },
       {
         "name": "udpNetConfig",
-        "signature": "(options: { macAddress: string; ipAddress: string; mask: string; gateway: string; dhcp: boolean; }) => Promise<void>",
+        "signature": "(options: { macAddress: string; ipAddress: string; mask: string; gateway: string; dhcp: boolean; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -297,7 +297,7 @@
             "type": "{ macAddress: string; ipAddress: string; mask: string; gateway: string; dhcp: boolean; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -305,7 +305,7 @@
       },
       {
         "name": "feedDot",
-        "signature": "(options: { dotCount: number; }) => Promise<void>",
+        "signature": "(options: { dotCount: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -313,7 +313,7 @@
             "type": "{ dotCount: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -321,7 +321,7 @@
       },
       {
         "name": "cutPaper",
-        "signature": "(options: { model: number; }) => Promise<void>",
+        "signature": "(options: { model: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -329,7 +329,7 @@
             "type": "{ model: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -337,7 +337,7 @@
       },
       {
         "name": "cutHalfAndFeed",
-        "signature": "(options: { distance: number; }) => Promise<void>",
+        "signature": "(options: { distance: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -345,7 +345,7 @@
             "type": "{ distance: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -353,7 +353,7 @@
       },
       {
         "name": "setPrintArea",
-        "signature": "(options: { x: number; y: number; width: number; height: number; }) => Promise<void>",
+        "signature": "(options: { x: number; y: number; width: number; height: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -361,7 +361,7 @@
             "type": "{ x: number; y: number; width: number; height: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -369,7 +369,7 @@
       },
       {
         "name": "setPageModel",
-        "signature": "(options: { isOpen: boolean; }) => Promise<void>",
+        "signature": "(options: { isOpen: boolean; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -377,7 +377,7 @@
             "type": "{ isOpen: boolean; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -385,7 +385,7 @@
       },
       {
         "name": "setPrintDirection",
-        "signature": "(options: { direction: number; }) => Promise<void>",
+        "signature": "(options: { direction: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -393,7 +393,7 @@
             "type": "{ direction: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -401,7 +401,7 @@
       },
       {
         "name": "setAbsoluteHorizontal",
-        "signature": "(options: { position: number; }) => Promise<void>",
+        "signature": "(options: { position: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -409,7 +409,7 @@
             "type": "{ position: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -417,7 +417,7 @@
       },
       {
         "name": "setRelativeHorizontal",
-        "signature": "(options: { position: number; }) => Promise<void>",
+        "signature": "(options: { position: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -425,7 +425,7 @@
             "type": "{ position: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -433,7 +433,7 @@
       },
       {
         "name": "setAbsoluteVertical",
-        "signature": "(options: { position: number; }) => Promise<void>",
+        "signature": "(options: { position: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -441,7 +441,7 @@
             "type": "{ position: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -449,7 +449,7 @@
       },
       {
         "name": "setRelativeVertical",
-        "signature": "(options: { position: number; }) => Promise<void>",
+        "signature": "(options: { position: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -457,7 +457,7 @@
             "type": "{ position: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -465,7 +465,7 @@
       },
       {
         "name": "setTextStyle",
-        "signature": "(options: { attribute: number; textSize: number; }) => Promise<void>",
+        "signature": "(options: { attribute: number; textSize: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -473,7 +473,7 @@
             "type": "{ attribute: number; textSize: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -481,7 +481,7 @@
       },
       {
         "name": "setAlignment",
-        "signature": "(options: { alignment: number; }) => Promise<void>",
+        "signature": "(options: { alignment: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -489,7 +489,7 @@
             "type": "{ alignment: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -497,7 +497,7 @@
       },
       {
         "name": "downloadNVImage",
-        "signature": "(options: { imagePaths: string; imageWidth: number; }) => Promise<void>",
+        "signature": "(options: { imagePaths: string; imageWidth: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -505,7 +505,7 @@
             "type": "{ imagePaths: string; imageWidth: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -513,9 +513,9 @@
       },
       {
         "name": "clearNVImage",
-        "signature": "() => Promise<void>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -523,7 +523,7 @@
       },
       {
         "name": "printNVImage",
-        "signature": "(options: { index: number; model: number; }) => Promise<void>",
+        "signature": "(options: { index: number; model: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -531,7 +531,7 @@
             "type": "{ index: number; model: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -539,9 +539,9 @@
       },
       {
         "name": "initializePrinter",
-        "signature": "() => Promise<void>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -549,7 +549,7 @@
       },
       {
         "name": "setLineSpacing",
-        "signature": "(options: { space: number; }) => Promise<void>",
+        "signature": "(options: { space: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -557,7 +557,7 @@
             "type": "{ space: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -565,7 +565,7 @@
       },
       {
         "name": "setTurnUpsideDownMode",
-        "signature": "(options: { on: boolean; }) => Promise<void>",
+        "signature": "(options: { on: boolean; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -573,7 +573,7 @@
             "type": "{ on: boolean; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -581,7 +581,7 @@
       },
       {
         "name": "selectCodePage",
-        "signature": "(options: { page: number; }) => Promise<void>",
+        "signature": "(options: { page: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -589,7 +589,7 @@
             "type": "{ page: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -597,7 +597,7 @@
       },
       {
         "name": "selectCharacterFont",
-        "signature": "(options: { font: number; }) => Promise<void>",
+        "signature": "(options: { font: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -605,7 +605,7 @@
             "type": "{ font: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -613,7 +613,7 @@
       },
       {
         "name": "setCharRightSpace",
-        "signature": "(options: { space: number; }) => Promise<void>",
+        "signature": "(options: { space: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -621,7 +621,7 @@
             "type": "{ space: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -629,7 +629,7 @@
       },
       {
         "name": "openOrCloseAutoReturnPrintState",
-        "signature": "(options: { info: number; }) => Promise<void>",
+        "signature": "(options: { info: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -637,7 +637,7 @@
             "type": "{ info: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -645,7 +645,7 @@
       },
       {
         "name": "wifiConfig",
-        "signature": "(options: { ip: string; mask: string; gateway: string; ssid: string; password: string; encrypt: number; }) => Promise<void>",
+        "signature": "(options: { ip: string; mask: string; gateway: string; ssid: string; password: string; encrypt: number; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -653,7 +653,7 @@
             "type": "{ ip: string; mask: string; gateway: string; ssid: string; password: string; encrypt: number; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -661,7 +661,7 @@
       },
       {
         "name": "setIp",
-        "signature": "(options: { ip: string; }) => Promise<void>",
+        "signature": "(options: { ip: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -669,7 +669,7 @@
             "type": "{ ip: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -677,7 +677,7 @@
       },
       {
         "name": "setMask",
-        "signature": "(options: { mask: string; }) => Promise<void>",
+        "signature": "(options: { mask: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -685,7 +685,7 @@
             "type": "{ mask: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -693,7 +693,7 @@
       },
       {
         "name": "setGateway",
-        "signature": "(options: { gateway: string; }) => Promise<void>",
+        "signature": "(options: { gateway: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -701,7 +701,7 @@
             "type": "{ gateway: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -709,7 +709,7 @@
       },
       {
         "name": "setNetAll",
-        "signature": "(options: { ip: string; mask: string; gateway: string; dhcpIsOpen: boolean; }) => Promise<void>",
+        "signature": "(options: { ip: string; mask: string; gateway: string; dhcpIsOpen: boolean; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -717,7 +717,7 @@
             "type": "{ ip: string; mask: string; gateway: string; dhcpIsOpen: boolean; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -725,7 +725,7 @@
       },
       {
         "name": "setBluetooth",
-        "signature": "(options: { name: string; pin: string; }) => Promise<void>",
+        "signature": "(options: { name: string; pin: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -733,7 +733,7 @@
             "type": "{ name: string; pin: string; }"
           }
         ],
-        "returns": "Promise<void>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -741,9 +741,9 @@
       },
       {
         "name": "getSerialNumber",
-        "signature": "() => Promise<{ serialNumber: string; }>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<{ serialNumber: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
