@@ -30,42 +30,64 @@ import org.json.JSONException;
 @CapacitorPlugin(name = "VhPrinterAndroidPosUsb")
 public class VhPrinterAndroidPosUsbPlugin extends Plugin {
 
+    private static final int WEB_CONNECT_SUCCESS_CODE = 1;
+    private static final int WEB_CONNECT_FAIL_CODE = 2;
+    private static final int WEB_SEND_FAIL_CODE = 3;
+    private static final int WEB_CONNECT_INTERRUPT_CODE = 4;
+    private static final int WEB_USB_ATTACHED_CODE = 5;
+    private static final int WEB_USB_DETACHED_CODE = 6;
+
     private IDeviceConnection curConnect;
     private POSPrinter printer;
     private CPCLPrinter cpclPrinter;
 
     private IConnectListener connectListener = (code, connInfo, msg) -> {
         JSObject ret = new JSObject();
-        ret.put("code", code);
+        ret.put("code", toWebConnectionCode(code));
         ret.put("connInfo", connInfo);
         ret.put("msg", msg);
 
-        switch (code) {
-            case POSConnect.CONNECT_SUCCESS:
-                ret.put("status", "CONNECT_SUCCESS");
-                break;
-            case POSConnect.CONNECT_FAIL:
-                ret.put("status", "CONNECT_FAIL");
-                break;
-            case POSConnect.CONNECT_INTERRUPT:
-                ret.put("status", "CONNECT_INTERRUPT");
-                break;
-            case POSConnect.SEND_FAIL:
-                ret.put("status", "SEND_FAIL");
-                break;
-            case POSConnect.USB_DETACHED:
-                ret.put("status", "USB_DETACHED");
-                break;
-            case POSConnect.USB_ATTACHED:
-                ret.put("status", "USB_ATTACHED");
-                break;
-            default:
-                ret.put("status", "UNKNOWN");
-                break;
-        }
-
+        ret.put("status", toConnectionStatus(code));
         notifyListeners("connectionStatus", ret);
     };
+
+    private static String toConnectionStatus(int code) {
+        switch (code) {
+            case POSConnect.CONNECT_SUCCESS:
+                return "CONNECT_SUCCESS";
+            case POSConnect.CONNECT_FAIL:
+                return "CONNECT_FAIL";
+            case POSConnect.CONNECT_INTERRUPT:
+                return "CONNECT_INTERRUPT";
+            case POSConnect.SEND_FAIL:
+                return "SEND_FAIL";
+            case POSConnect.USB_DETACHED:
+                return "USB_DETACHED";
+            case POSConnect.USB_ATTACHED:
+                return "USB_ATTACHED";
+            default:
+                return "UNKNOWN";
+        }
+    }
+
+    private static int toWebConnectionCode(int code) {
+        switch (code) {
+            case POSConnect.CONNECT_SUCCESS:
+                return WEB_CONNECT_SUCCESS_CODE;
+            case POSConnect.CONNECT_FAIL:
+                return WEB_CONNECT_FAIL_CODE;
+            case POSConnect.CONNECT_INTERRUPT:
+                return WEB_CONNECT_INTERRUPT_CODE;
+            case POSConnect.SEND_FAIL:
+                return WEB_SEND_FAIL_CODE;
+            case POSConnect.USB_DETACHED:
+                return WEB_USB_DETACHED_CODE;
+            case POSConnect.USB_ATTACHED:
+                return WEB_USB_ATTACHED_CODE;
+            default:
+                return code;
+        }
+    }
 
     @Override
     public void load() {
@@ -160,7 +182,8 @@ public class VhPrinterAndroidPosUsbPlugin extends Plugin {
         try {
             if (curConnect != null)
                 curConnect.close();
-            curConnect = POSConnect.connectMac(macAddress, connectListener);
+            curConnect = POSConnect.createDevice(POSConnect.DEVICE_TYPE_BLUETOOTH);
+            curConnect.connect(macAddress, connectListener);
             printer = new POSPrinter(curConnect);
             cpclPrinter = new CPCLPrinter(curConnect);
             call.resolve();
