@@ -117,8 +117,11 @@ public class VhPrinterAndroidPosUsbPlugin extends Plugin {
         }
 
         try {
-            if (curConnect != null)
-                curConnect.close();
+            try {
+                if (curConnect != null) curConnect.close();
+            } catch (Exception e) {
+                call.reject("Connection failed", e);
+            }
             curConnect = POSConnect.createDevice(POSConnect.DEVICE_TYPE_USB);
             curConnect.connect(pathName, connectListener);
             printer = new POSPrinter(curConnect);
